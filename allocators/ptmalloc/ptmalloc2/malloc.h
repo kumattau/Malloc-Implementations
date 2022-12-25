@@ -63,6 +63,7 @@
 
 #ifdef __GNUC__
 
+#undef __THROW
 /* GCC can always grok prototypes.  For C++ programs we add throw()
    to help it optimize the function calls.  But this works only with
    gcc 2.8.x and egcs.  */

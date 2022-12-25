@@ -3,7 +3,7 @@
 case "$OSTYPE" in
 [Ll]inux*)
   echo "Compiling for Linux"
-  g++ -pipe -march=pentiumpro -O3 -finline-limit=65000 -fkeep-inline-functions -finline-functions -ffast-math -fomit-frame-pointer -DNDEBUG  -I. -I.. -D_REENTRANT=1 -shared malloc.c -o libptmalloc.so;;
+  gcc -pipe -D_GNU_SOURCE -fPIC -O3 -finline-limit=65000 -fkeep-inline-functions -finline-functions -ffast-math -fomit-frame-pointer -DNDEBUG  -I. -I.. -D_REENTRANT=1 -shared malloc.c -o libptmalloc.so;;
 solaris)
   echo "Compiling for Solaris"
   #CC -xildoff -native -noex -xipo=2 -xO5 -mt -DNDEBUG -I. -I.. -D_REENTRANT=1 -G -PIC malloc.c -o libptmalloc.so;;
